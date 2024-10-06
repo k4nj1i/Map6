@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Comprehensive Allegations Map of Sean Combs</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+        }
+        #map {
+            height: 100vh;
+            width: 100vw;
+        }
+        .disclaimer {
+            font-size: 14px;
+            color: #555;
+            margin: 20px 0;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <h3 style="text-align: center;">Comprehensive Allegations Map of Sean Combs</h3>
+    <div class="disclaimer">
+        <p><strong>Disclaimer:</strong> This map is for educational purposes only. It compiles allegations and ongoing legal proceedings involving Sean Combs, based on publicly available legal documents.</p>
+    </div>
+    <div id="map"></div>
+    <script>
+        var map = L.map('map').setView([37.0902, -95.7129], 4);
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            maxZoom: 18,
+        }).addTo(map);
+
+        var locations = [
+            {
+                name: "Booby Trap on the River, Miami, FL",
+                coords: [25.8097, -80.2621],
+                description: `
+                    <b>Year</b>: 2022<br>
+                    <b>Event</b>: Mr. Jones was forced to recruit sex workers for Combs.<br>
+                    <b>Testimony</b>: "Combs required Mr. Jones to solicit sex workers from Booby Trap on the River using a Bad Boy baseball cap as a signal to the workers" (Rodney Jones Complaint, Page 8).<br>
+                    <b>Case Status</b>: Pending investigation.<br>
+                `
+            },
+            {
+                name: "Trump International Hotel, Columbus Circle, NY",
+                coords: [40.7686, -73.9821],
+                description: `
+                    <b>Year</b>: 2013<br>
+                    <b>Event</b>: Freak Off event with forced voyeurism.<br>
+                    <b>Testimony</b>: "Combs hosted Freak Off events at Trump International Hotel, where Ventura was coerced into sexual acts while Combs directed and filmed" (Cassie Ventura Complaint, Page 16).<br>
+                    <b>Case Status</b>: Settled.<br>
+                `
+            },
+            {
+                name: "Fontainebleau Hotel, Miami Beach, FL",
+                coords: [25.8190, -80.1223],
+                description: `
+                    <b>Year</b>: 2013-2016<br>
+                    <b>Event</b>: Repeated Freak Off events.<br>
+                    <b>Testimony</b>: "Freak Off events regularly took place at the Fontainebleau Hotel in Miami, involving coerced sexual activity and drug use" (Cassie Ventura Complaint, Page 16).<br>
+                    <b>Case Status</b>: Settled.<br>
+                `
+            },
+            {
+                name: "Shutters on the Beach, Santa Monica, CA",
+                coords: [34.0080, -118.4925],
+                description: `
+                    <b>Year</b>: 2016<br>
+                    <b>Event</b>: Freak Off event with drug use and forced sex acts.<br>
+                    <b>Testimony</b>: "Combs directed sexual acts while using drugs to manipulate participants during a Freak Off event" (Cassie Ventura Complaint, Page 16).<br>
+                    <b>Case Status</b>: Settled.<br>
+                `
+            },
+            {
+                name: "InterContinental New York Times Square, NY",
+                coords: [40.7565, -73.9880],
+                description: `
+                    <b>Year</b>: 2013<br>
+                    <b>Event</b>: Multiple Freak Off events.<br>
+                    <b>Testimony</b>: "Combs arranged for Freak Offs involving drugs and coerced sexual acts, which were filmed and used for manipulation" (Cassie Ventura Complaint, Page 16).<br>
+                    <b>Case Status</b>: Settled.<br>
+                `
+            },
+            {
+                name: "Cipriani Downtown, New York, NY",
+                coords: [40.7230, -74.0007],
+                description: `
+                    <b>Year</b>: 2003<br>
+                    <b>Event</b>: Crystal McKinney was introduced to Sean Combs at a Men’s Fashion Week event.<br>
+                    <b>Testimony</b>: "Combs drugged and assaulted Plaintiff at his recording studio following the event" (Crystal McKinney Complaint, Page 14).<br>
+                    <b>Case Status</b>: Pending litigation.<br>
+                `
+            },
+            {
+                name: "Wells Restaurant, Harlem, NY",
+                coords: [40.8184, -73.9435],
+                description: `
+                    <b>Year</b>: 1991<br>
+                    <b>Event</b>: Joi Dickerson was drugged and later assaulted by Sean Combs.<br>
+                    <b>Testimony</b>: "My friend told me that my assault had been videotaped and shared without my consent" (Joi Dickerson Complaint, Page 6).<br>
+                    <b>Case Status</b>: Pending litigation.<br>
+                `
+            },
+            {
+                name: "Combs' Estate, Hamptons, NY",
+                coords: [40.9634, -72.1848],
+                description: `
+                    <b>Year</b>: 2004-2009<br>
+                    <b>Event</b>: Trafficking and exploitation at Combs' “White Parties.”<br>
+                    <b>Testimony</b>: "Combs arranged for women to be flown to his estate, where they were coerced into sexual acts" (Adria English Complaint, Page 18).<br>
+                    <b>Case Status</b>: Under investigation.<br>
+                `
+            },
+            {
+                name: "Star Island, Miami, FL",
+                coords: [25.7649, -80.1580],
+                description: `
+                    <b>Year</b>: 2004-2009<br>
+                    <b>Event</b>: Sex trafficking and drug distribution at parties hosted by Combs.<br>
+                    <b>Testimony</b>: "Adria English testified that sex workers were flown to Star Island to engage in non-consensual acts" (Adria English Complaint, Page 23).<br>
+                    <b>Case Status</b>: Pending under RICO violations.<br>
+                `
+            },
+            {
+                name: "Chalice Recording Studios, Los Angeles, CA",
+                coords: [34.0522, -118.2437],
+                description: `
+                    <b>Year</b>: 2022<br>
+                    <b>Event</b>: Shooting incident involving Rodney Jones and Sean Combs.<br>
+                    <b>Testimony</b>: "Combs forced witnesses to lie to the police after the shooting" (Rodney Jones Complaint, Page 5).<br>
+                    <b>Case Status</b>: Pending criminal investigation.<br>
+                `
+            },
+            {
+                name: "InterContinental Hotel, Los Angeles, CA",
+                coords: [34.0522, -118.2437],
+                description: `
+                    <b>Year</b>: 2016<br>
+                    <b>Event</b>: Assault on Cassie Ventura.<br>
+                    <b>Testimony</b>: "Hotel security footage shows Combs striking Ventura multiple times" (Cassie Ventura Complaint, Page 9).<br>
+                    <b>Case Status</b>: Settled in November 2023.<br>
+                `
+            },
+            {
+                name: "Thanksgiving Night Incident, Miami, FL",
+                coords: [25.7617, -80.1918],
+                description: `
+                    <b>Year</b>: 2022<br>
+                    <b>Event</b>: Combs forced Jones to solicit sex workers after a Thanksgiving party.<br>
+                    <b>Testimony</b>: "Combs required Jones to solicit sex workers from Booby Trap on the River later that night" (Rodney Jones Complaint, Page 8).<br>
+                    <b>Case Status</b>: Pending investigation.<br>
+                `
+            },
+            {
+                name: "Assault by Cuba Gooding Jr. on a Yacht, US Virgin Islands",
+                coords: [18.3358, -64.8963],
+                description: `
+                    <b>Year</b>: 2022<br>
+                    <b>Event</b>: Cuba Gooding Jr. assaulted Mr. Jones at the request of Combs during a yacht party.<br>
+                    <b>Testimony</b>: "Cuba Gooding Jr. began touching and groping Mr. Jones' legs and upper thighs at the request of Mr. Combs" (Rodney Jones Complaint, Page 10).<br>
+                    <b>Case Status</b>: Pending investigation.<br>
+                `
+            },
+            {
+                name: "Incident with Underage Sex Workers, Miami, FL",
+                coords: [25.7617, -80.1918],
+                description: `
+                    <b>Year</b>: 2023<br>
+                    <b>Event</b>: Combs forced Jones to bring underage sex workers to his Miami home.<br>
+                    <b>Testimony</b>: "Combs forced Jones to bring underage prostitutes to his Miami home where illegal acts took place" (Rodney Jones Complaint, Page 11).<br>
+                    <b>Case Status</b>: Pending investigation.<br>
+                `
+            }
+        ];
+
+        // Add markers to the map
+        locations.forEach(function(location) {
+            L.marker(location.coords).addTo(map).bindPopup(location.description);
+        });
+    </script>
+</body>
+</html>
